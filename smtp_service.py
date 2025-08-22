@@ -113,7 +113,7 @@ class SMTPService:
                     "message": "No emails found",
                     "emails": []
                 }
-            
+             
             # Create comma-separated list of message IDs
             id_list = b','.join(latest_ids)
             
