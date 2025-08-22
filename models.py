@@ -1,6 +1,5 @@
 from pydantic import BaseModel, EmailStr
 from typing import List, Optional
-from enum import Enum
 
 class SMTPConnection(BaseModel):
     email: EmailStr
@@ -25,3 +24,16 @@ class ConnectionResponse(BaseModel):
 class SendEmailResponse(BaseModel):
     success: bool
     message: str
+
+# Updated for fast metadata listing
+class FetchEmailsResponse(BaseModel):
+    success: bool
+    message: str
+    emails: List[dict] = []
+    count: int = 0
+
+# New model for full email details
+class EmailDetailsResponse(BaseModel):
+    success: bool
+    message: str
+    email: Optional[dict] = None
